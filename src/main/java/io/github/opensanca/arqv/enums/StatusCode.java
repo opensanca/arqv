@@ -1,4 +1,4 @@
-package io.github.opensanca.arqv.utils;
+package io.github.opensanca.arqv.enums;
 
 public enum StatusCode {
     CREATED("created"), OK("ok"), NO_CONTENT("noContent");
