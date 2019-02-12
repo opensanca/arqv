@@ -54,13 +54,13 @@
         <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
         <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
-        <maven-pmd-plugin.version>3.9.0</maven-pmd-plugin.version>
 
         <spring.version>4.3.22.RELEASE</spring.version>
         <spring-boot.version>1.5.19.RELEASE</spring-boot.version>
 
         <archunit-junit4.version>0.9.3</archunit-junit4.version>
         <junit.version>4.12</junit.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
     </properties>
     <dependencies>
         <dependency>
@@ -70,12 +70,25 @@
             <scope>compile</scope>
         </dependency>
  
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${spring-boot.version}</version>
-            <scope>test</scope>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -88,6 +101,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
         </dependency>
 
 
@@ -175,26 +194,6 @@
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
                         </configuration>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>${maven-pmd-plugin.version}</version>
-                <configuration>
-                    <linkXRef>false</linkXRef>
-                    <failOnViolation>true</failOnViolation>
-                    <printFailingErrors>true</printFailingErrors>
-                    <rulesets>
-                        <ruleset>/category/java/bestpractices.xml</ruleset>
-                    </rulesets>
-                </configuration>
-                <executions>
-                    <execution>
                         <goals>
                             <goal>check</goal>
                         </goals>
