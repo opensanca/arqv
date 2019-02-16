@@ -1,4 +1,4 @@
-package io.github.opensanca.arqv.rules.rest.spring;
+package io.github.opensanca.arqv.rules.spring.rest;
 
 import static com.tngtech.archunit.core.domain.properties.CanBeAnnotated.Predicates.annotatedWith;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.all;
