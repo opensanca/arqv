@@ -1,10 +1,10 @@
-package io.github.opensanca.arqv.rules.rest.spring;
+package io.github.opensanca.arqv.rules.spring.rest;
 
 import static com.tngtech.archunit.core.domain.properties.CanBeAnnotated.Predicates.annotatedWith;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.all;
-import static io.github.opensanca.arqv.utils.ArqvUtils.methods;
 import static io.github.opensanca.arqv.utils.ArqvUtils.areDefinedInAPackage;
 import static io.github.opensanca.arqv.utils.ArqvUtils.arePublic;
+import static io.github.opensanca.arqv.utils.ArqvUtils.methods;
 import static io.github.opensanca.arqv.utils.ArqvUtils.returnStatusCode;
 
 import com.tngtech.archunit.junit.AnalyzeClasses;
@@ -13,20 +13,20 @@ import com.tngtech.archunit.junit.ArchUnitRunner;
 import com.tngtech.archunit.lang.ArchRule;
 import io.github.opensanca.arqv.enums.StatusCode;
 import org.junit.runner.RunWith;
-import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @RunWith(ArchUnitRunner.class)
 @AnalyzeClasses(packages = "")
-public class AllPatchMappingShouldReturn200Rule {
+public class AllPutMappingShouldReturn200Rule {
 
     private final static String PATH_PACKAGE_RESOURCE = "..resources..";
 
     @ArchTest
-    public static ArchRule ALL_PATCH_MAPPING_SHOULD_RETURN_200 =
+    public static ArchRule ALL_PUT_MAPPING_SHOULD_RETURN_200 =
             all(methods())
                     .that(areDefinedInAPackage(PATH_PACKAGE_RESOURCE))
                     .and(arePublic())
-                    .and(annotatedWith(PatchMapping.class))
+                    .and(annotatedWith(PutMapping.class))
                     .should(returnStatusCode(StatusCode.OK));
 
 }

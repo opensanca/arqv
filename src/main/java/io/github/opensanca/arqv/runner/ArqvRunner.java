@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+import io.github.opensanca.arqv.utils.Defaults;
 import io.github.opensanca.arqv.enums.ArqvGroupRules;
 import io.github.opensanca.arqv.enums.ArqvRules;
 import org.apache.commons.lang3.ArrayUtils;
@@ -31,7 +32,7 @@ import org.junit.runners.model.RunnerBuilder;
  */
 public class ArqvRunner extends ParentRunner<Runner> {
 
-    private static final ArqvRules[] DEFAULT_TESTS = ArqvGroupRules.SPRING_REST_GROUPS_RULES.getArqvRules();
+    private static final ArqvRules[] DEFAULT_TESTS = Defaults.tests();
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.TYPE)
