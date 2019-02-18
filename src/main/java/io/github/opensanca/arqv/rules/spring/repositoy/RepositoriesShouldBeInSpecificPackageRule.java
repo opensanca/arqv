@@ -16,12 +16,10 @@ public class RepositoriesShouldBeInSpecificPackageRule {
     static final ArchRule REPOSITORIES_SHOULD_STAY_ON_REPOSITORY_PACKAGE =
         classes()
             .that()
-                .areInterfaces()
-                .and()
                 .haveNameMatching(".*Repository")
             .should()
                 .beInterfaces()
             .andShould()
-                .resideInAPackage("..repository..")
-            .as("Repositories should reside in a package '..repository..'");
+                .resideInAPackage("..repositories..")
+            .as("Repositories should reside in a package '..repositories..'");
 }
