@@ -1,4 +1,4 @@
-# Arqv - Archtecture Validation
+# Arqv - Architecture Validation
 
 ## What is this?
 
