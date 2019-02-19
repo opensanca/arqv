@@ -1,16 +1,17 @@
 package io.github.opensanca.arqv.utils;
 
+import java.util.stream.Stream;
+
 import io.github.opensanca.arqv.enums.ArqvGroupRules;
 import io.github.opensanca.arqv.enums.ArqvRules;
-import org.apache.commons.lang3.ArrayUtils;
 
 public class Defaults {
 
     public static ArqvRules[] rules() {
-        return (ArqvRules[]) ArrayUtils.addAll(
+        return Stream.of(
                 ArqvGroupRules.SPRING_REST_GROUPS_RULES.getArqvRules(),
                 ArqvGroupRules.SPRING_REPOSITORY_GROUP_RULES.getArqvRules(),
                 ArqvGroupRules.SPRING_LAYERS_GROUP_RULES.getArqvRules()
-        );
+        ).flatMap(Stream::of).toArray(ArqvRules[]::new);
     }
 }

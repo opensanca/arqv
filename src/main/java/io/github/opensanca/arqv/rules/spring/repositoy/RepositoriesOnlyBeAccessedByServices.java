@@ -2,6 +2,7 @@ package io.github.opensanca.arqv.rules.spring.repositoy;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
+import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.junit.ArchUnitRunner;
@@ -10,7 +11,10 @@ import org.junit.runner.RunWith;
 import org.springframework.stereotype.Service;
 
 @RunWith(ArchUnitRunner.class)
-@AnalyzeClasses(packages = "")
+@AnalyzeClasses(
+        packages = "",
+        importOptions = ImportOption.DontIncludeTests.class
+)
 public class RepositoriesOnlyBeAccessedByServices {
 
     @ArchTest
