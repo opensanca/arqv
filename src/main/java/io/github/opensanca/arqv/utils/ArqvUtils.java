@@ -79,12 +79,12 @@ public class ArqvUtils {
         };
     }
 
-    public static DescribedPredicate<HasAnnotations> annotatedWithRequestMappingWithHttpMethod(RequestMethod requestMethod) {
+    public static DescribedPredicate<HasAnnotations> annotatedWithRequestMappingWithHttpMethod(final RequestMethod requestMethod) {
         return new DescribedPredicate<HasAnnotations>("annotated with RequestMapping with HTTP Method: " + requestMethod) {
             @Override
-            public boolean apply(HasAnnotations input) {
-                Optional<RequestMapping> annotation = input.tryGetAnnotationOfType(RequestMapping.class);
-                return annotation.isPresent() && Arrays.asList(annotation.get().method()).stream().anyMatch(requestMethod1 -> requestMethod1.equals(requestMethod));
+            public boolean apply(final HasAnnotations input) {
+                final Optional<RequestMapping> annotation = input.tryGetAnnotationOfType(RequestMapping.class);
+                return annotation.isPresent() && Arrays.asList(annotation.get().method()).stream().anyMatch(rm -> rm.equals(requestMethod));
             }
         };
     }

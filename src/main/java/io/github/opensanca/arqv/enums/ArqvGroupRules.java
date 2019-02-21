@@ -2,6 +2,8 @@ package io.github.opensanca.arqv.enums;
 
 import java.util.stream.Stream;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 public enum ArqvGroupRules {
 
     SPRING_REST_GROUPS_RULES(new Class<?>[]{
@@ -28,11 +30,7 @@ public enum ArqvGroupRules {
     private Class<?>[] value;
 
     ArqvGroupRules(final Class<?>[] value) {
-        this.value = value;
-    }
-
-    public Class<?>[] getValue() {
-        return value;
+        this.value = ArrayUtils.clone(value);
     }
 
     public ArqvRules[] getArqvRules() {

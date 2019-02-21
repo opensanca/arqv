@@ -13,6 +13,7 @@ import io.github.opensanca.arqv.rules.spring.rest.OnlyResourcesMayUseRestControl
 import io.github.opensanca.arqv.rules.spring.rest.ResourcesShouldBeInSpecificPackageRule;
 
 public enum ArqvRules {
+
     SPRING_LAYERS_RULES(SpringLayersRules.class),
     ALL_DELETE_MAPPING_SHOULD_RETURN_204(AllDeleteMappingShouldReturn204Rule.class),
     ALL_GET_MAPPING_SHOULD_RETURN_200(AllGetMappingShouldReturn200Rule.class),

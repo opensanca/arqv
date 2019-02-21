@@ -32,16 +32,13 @@ import org.junit.runners.model.RunnerBuilder;
  */
 public class ArqvRunner extends ParentRunner<Runner> {
 
-    private static final ArqvRules[] DEFAULT_TESTS = Defaults.tests();
+    private static final ArqvRules[] DEFAULT_TESTS = Defaults.rules();
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.TYPE)
     @Inherited
     public @interface RunTests {
 
-        /**
-         * @return the classes to be run
-         */
         ArqvRules[] includingRules() default {};
 
         ArqvRules[] excludingRules() default {};
